@@ -11,6 +11,7 @@ formEl.addEventListener('input', throttle(onInputSave, 500));
 
 addSavedData();
 
+
 function onInputSave() {
 
     const formData = {
@@ -22,7 +23,8 @@ function onInputSave() {
 
 function onFormSubmit(evt){
     evt.preventDefault();
-    console.log('User: ', savedText);
+    console.log('User: ', localStorage.getItem(STORAGE_KEY));
+    
     evt.target.reset();
     localStorage.removeItem(STORAGE_KEY);
 }
